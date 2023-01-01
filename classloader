@@ -2,57 +2,57 @@
 In Java, Questions related to classloader, rt.jar?
 
 Question 1: What is a classloader? How does it work in Java?
-			A classloader is a Java component that is responsible for loading class files from various sources (such as the local file system, a network location, or a JAR file)
-			and making them available to the Java runtime system. When you run a Java program, the classloader loads the required class files and creates instances of the classes as needed.
+A classloader is a Java component that is responsible for loading class files from various sources (such as the local file system, a network location, or a JAR file)
+and making them available to the Java runtime system. When you run a Java program, the classloader loads the required class files and creates instances of the classes as needed.
 
 Question 2: What is the purpose of the rt.jar file?
-			The rt.jar file (short for "runtime JAR") is a JAR file that contains the Java runtime libraries. It includes the core Java classes (such as String, Math, and Object),
-			as well as other classes that are required for the Java runtime system to function. When you run a Java program, the classloader loads the classes from the rt.jar file as needed.
+The rt.jar file (short for "runtime JAR") is a JAR file that contains the Java runtime libraries. It includes the core Java classes (such as String, Math, and Object),
+as well as other classes that are required for the Java runtime system to function. When you run a Java program, the classloader loads the classes from the rt.jar file as needed.
 
 Question 3: What are the different types of classloaders in Java?
 
-			There are several different types of classloaders in Java, including the following:
-			-> The bootstrap classloader: This is the root classloader in the Java classloading hierarchy. It loads the core Java classes from the rt.jar file and other system-level classes.
-			-> The extension classloader: This classloader loads classes from the ext directory (located in the JAVA_HOME/jre/lib directory) and any JAR files in the JAVA_HOME/jre/lib/ext directory.
-			-> The system classloader: This classloader loads classes from the directories and JAR files specified by the CLASSPATH environment variable.
-			-> The application classloader: This classloader loads classes from the directories and JAR files specified in the classpath when running a Java program (using the java command).
+There are several different types of classloaders in Java, including the following:
+-> The bootstrap classloader: This is the root classloader in the Java classloading hierarchy. It loads the core Java classes from the rt.jar file and other system-level classes.
+-> The extension classloader: This classloader loads classes from the ext directory (located in the JAVA_HOME/jre/lib directory) and any JAR files in the JAVA_HOME/jre/lib/ext directory.
+-> The system classloader: This classloader loads classes from the directories and JAR files specified by the CLASSPATH environment variable.
+-> The application classloader: This classloader loads classes from the directories and JAR files specified in the classpath when running a Java program (using the java command).
 
 Question 4: How does the Java classloading mechanism handle class dependencies?
-			When a class depends on another class, the classloader loads the dependent class first and then loads the class that depends on it. 
-			This process continues recursively until all the required classes have been loaded. If a class cannot be found or there is some other error while loading a class,
-			the classloader throws a ClassNotFoundException.
+When a class depends on another class, the classloader loads the dependent class first and then loads the class that depends on it. 
+This process continues recursively until all the required classes have been loaded. If a class cannot be found or there is some other error while loading a class,
+the classloader throws a ClassNotFoundException.
 
 Question 5: How do you customize the classloading process in Java?
-			You can customize the classloading process in Java by creating a custom classloader. A custom classloader is a subclass of the ClassLoader class that overrides
-			the loadClass() method to specify how class files should be loaded. You can use a custom classloader to load classes from non-standard locations 
-			(such as a network location or a database), or to implement special behavior when loading classes (such as checking for security permissions or decompressing compressed class files).
+You can customize the classloading process in Java by creating a custom classloader. A custom classloader is a subclass of the ClassLoader class that overrides
+the loadClass() method to specify how class files should be loaded. You can use a custom classloader to load classes from non-standard locations 
+(such as a network location or a database), or to implement special behavior when loading classes (such as checking for security permissions or decompressing compressed class files).
 
 Question 6: Can you give an example of a situation where you might need to use a custom classloader?
-			There are several situations where you might need to use a custom classloader, including the following:
+There are several situations where you might need to use a custom classloader, including the following:
 
-			-> If you want to load classes from a non-standard location, such as a network location or a database.
-			-> If you want to implement special behavior when loading classes, such as checking for security permissions or decompressing compressed class files.
-			-> If you want to isolate different parts of your application from each other by using different classloaders for each part.
+-> If you want to load classes from a non-standard location, such as a network location or a database.
+-> If you want to implement special behavior when loading classes, such as checking for security permissions or decompressing compressed class files.
+-> If you want to isolate different parts of your application from each other by using different classloaders for each part.
 			
 Question 7: How does the Java classloading mechanism handle conflicts between different versions of the same class?
-			If multiple versions of the same class are available to the classloader, the classloader follows a delegation hierarchy to determine which version of the class to use. 
-			The classloader first checks the parent classloader (if one exists) to see if it has a version of the class. If the parent classloader does not have the class, 
-			the classloader checks its own classpath to see if it has a version of the class. If the class is found, it is loaded. If the class is not found, a ClassNotFoundException is thrown.
+If multiple versions of the same class are available to the classloader, the classloader follows a delegation hierarchy to determine which version of the class to use. 
+The classloader first checks the parent classloader (if one exists) to see if it has a version of the class. If the parent classloader does not have the class, 
+the classloader checks its own classpath to see if it has a version of the class. If the class is found, it is loaded. If the class is not found, a ClassNotFoundException is thrown.
 
-			This delegation hierarchy ensures that the most specific version of a class is used, and it also helps to prevent conflicts between different versions of the same class.
+This delegation hierarchy ensures that the most specific version of a class is used, and it also helps to prevent conflicts between different versions of the same class.
 			
 Question 8: Can you explain the difference between the System classloader and the Application classloader?
-			The System classloader is the classloader that is responsible for loading classes from the directories and JAR files specified by the CLASSPATH environment variable. 
-			It is used to load system-level classes that are required by the Java runtime system.
+The System classloader is the classloader that is responsible for loading classes from the directories and JAR files specified by the CLASSPATH environment variable. 
+It is used to load system-level classes that are required by the Java runtime system.
 
-			The Application classloader is the classloader that is responsible for loading classes from the directories and JAR files specified in the classpath when running 
-			a Java program (using the java command). It is used to load the classes for the application being run.
-			
+The Application classloader is the classloader that is responsible for loading classes from the directories and JAR files specified in the classpath when running 
+a Java program (using the java command). It is used to load the classes for the application being run.
+
 Question 9: How does the Java classloading mechanism handle security issues?
-			The Java classloading mechanism includes several security measures to help protect against malicious code. For example, 
-			the classloader checks the security policy before loading a class to ensure that the class has the necessary permissions to execute. 
-			The classloader also checks the digital signature of signed JAR files to ensure that they have not been tampered with.
+The Java classloading mechanism includes several security measures to help protect against malicious code. For example, 
+the classloader checks the security policy before loading a class to ensure that the class has the necessary permissions to execute. 
+The classloader also checks the digital signature of signed JAR files to ensure that they have not been tampered with.
 			
 Question 10: Can you describe a scenario where the classloading mechanism might throw a ClassNotFoundException?
-			A ClassNotFoundException might be thrown by the classloading mechanism if the classloader is unable to find the class file for a class that is being loaded. 
-			This can happen if the class is not on the classpath, or if there is a typo in the class name. A ClassNotFoundException might also be thrown if the class file is corrupt or if there is some other issue that prevents the class from being loaded.
+A ClassNotFoundException might be thrown by the classloading mechanism if the classloader is unable to find the class file for a class that is being loaded. 
+This can happen if the class is not on the classpath, or if there is a typo in the class name. A ClassNotFoundException might also be thrown if the class file is corrupt or if there is some other issue that prevents the class from being loaded.
