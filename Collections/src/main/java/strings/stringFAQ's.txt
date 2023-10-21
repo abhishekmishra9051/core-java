@@ -1,0 +1,17 @@
+Important FAQ on String & StringBuffer
+
+1. Why SCP concpt is available only for String object but not for StringBuffer
+    - Ex. If one person is regular customer to some shop then special privilages given to him but
+      if this person is go only once a year or month then special privilages not given to him.
+      Thats why SCP is available to String but not for StringBuffer.
+
+2. Why String objects are immutable where as StringBuffer objects are mutable.
+    - For String object SCP conecpt is there so reusability same object is there.
+      So if any one object’s value is change then all the references are affected so immutability is required.
+
+    - In StringBuffer for every reference different object is there because reusing same object is no there,
+      If we change any StringBuffer object it will not affect other objects because there is no SCP
+
+3. In addition to String objects any other objects are immutable in Java?
+    - All wrapper class objects
+    - Byte, Short, Integer, Long, Float, Double, Character, Boolean
