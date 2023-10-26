@@ -1,0 +1,10 @@
+Use of Linked List
+    - Stack and Queue
+    - Image Gallery
+    - Music Player
+    - Browsers
+    - HashMap and HashSet
+
+Representation of Linked List
+    In array 1 int = 4bytes
+    but in linked list => we use references to store the address
