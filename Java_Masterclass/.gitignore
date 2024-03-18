@@ -1,13 +1,4 @@
-# Ignore everything
-/*
-
-# Except for Java source files
-!**/*.java
-
-# Ignore test files and directories
-**/test/**
-**/tests/**
-
-# Exclude specific directory
-/target/
-/target/classes/org/example/
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
