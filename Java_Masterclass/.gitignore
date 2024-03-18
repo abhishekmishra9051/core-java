@@ -1,0 +1,9 @@
+# Ignore everything
+/*
+
+# Except for Java source files
+!**/*.java
+
+# Ignore test files and directories
+**/test/**
+**/tests/**
