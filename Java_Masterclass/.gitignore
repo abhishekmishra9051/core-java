@@ -7,3 +7,7 @@
 # Ignore test files and directories
 **/test/**
 **/tests/**
+
+# Exclude specific directory
+/target/
+/target/classes/org/example/
