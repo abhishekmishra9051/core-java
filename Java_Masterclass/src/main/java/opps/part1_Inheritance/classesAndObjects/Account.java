@@ -5,7 +5,28 @@ public class Account {
     private double balance;
     private String name;
     private String email;
-    private int number;
+    private String number;
+
+    public Account(){
+        this(1,2.4,"Abhishek","Abhi@gmail.com","9051282419");
+        System.out.println("Empty Constructor called..!");
+    }
+
+    public Account(int accountNumber, double balance, String name, String email, String number){
+        System.out.println("Parameter Constructor called..!");
+        this.accountNumber = accountNumber;
+        this.balance = balance;
+        this.name = name;
+        this.email = email;
+        this.number = number;
+    }
+
+    public Account(String name, String email, String number) {
+        this(1234, 4000.00,name,email,number);
+//        this.name = name;
+//        this.email = email;
+//        this.number = number;
+    }
 
     public void depositFunds(double depositAmount) {
         if (depositAmount > 0) { // Check if depositAmount is positive
@@ -70,11 +91,11 @@ public class Account {
         this.email = email;
     }
 
-    public int getNumber() {
+    public String getNumber() {
         return number;
     }
 
-    public void setNumber(int number) {
+    public void setNumber(String number) {
         this.number = number;
     }
 
